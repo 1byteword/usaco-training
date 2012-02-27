@@ -32,4 +32,22 @@ public class SolutionTest {
 		Assert.assertEquals(expected, actual);
 	}
 
+	@Test
+	public void testNoCow() {
+		
+		int[] xs = new int[] {0, 0, 1, 100, 200};
+		int[] ys = new int[] {0, 1, 0, 100, 200};
+		String[] adjacency = new String[] {
+				"00000", 
+				"00100", 
+				"01000", 
+				"00001", 
+				"00010"
+		};
+
+		String expected = "2.414214";
+		String actual = solution.solve(xs, ys, adjacency);
+		Assert.assertEquals(expected, actual);
+	}
+
 }
