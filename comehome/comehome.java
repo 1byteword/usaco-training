@@ -6,6 +6,7 @@ TASK: comehome
 import java.io.*;
 import java.util.*;
 
+
 public class comehome {
 
 	private static final int N = 26 * 2; 
@@ -60,25 +61,48 @@ public class comehome {
 
 		return sb.toString();
 	}
+	
+	private final class DistanceLookup implements Comparable<DistanceLookup> {
+		int distance;
+		int pointName;
+		public DistanceLookup(int p, int d) {
+			distance = d;
+			pointName  = p;
+		}
+		public int compareTo(DistanceLookup other) {
+			return distance  - other.distance;
+		}
+		
+		public boolean equals(Object obj) {
+			if (!(obj instanceof DistanceLookup)) return false;
+			DistanceLookup other = (DistanceLookup)obj;
+			return other.pointName == pointName;
+		}
+	}
 
 	private int[] dijkstra(int source) {
 		int[] dist = new int[N];
+		boolean[] visited = new boolean[N];  
 		for (int i = 0; i < N; i++) {
 			dist[i] = Integer.MAX_VALUE;
 		}
+		PriorityQueue<DistanceLookup> minDist = new PriorityQueue<DistanceLookup>();
+
 		dist[source] = 0;
-		boolean[] visited = new boolean[N];
+		minDist.add(new DistanceLookup(source, 0));
 		int visitedNodes = 0;
 
 		while (visitedNodes < N) {
-			int checking = minDist(dist, visited);
-			if (checking == -1) {
+			if (minDist.size() == 0) {
 				break;
 			}
+			int checking = minDist.remove().pointName;
 			for (int v : neighbors(checking)) {
 				// distance(checking,v) = 1
 				if (!visited[v]) {
+					minDist.remove(new DistanceLookup(v, dist[v]));
 					dist[v] = Math.min(dist[v], dist[checking] + distance[checking][v]);
+					minDist.add(new DistanceLookup(v, dist[v]));
 				}
 			}
 			visited[checking] = true;
@@ -97,20 +121,6 @@ public class comehome {
 			}
 		}
 
-		return res;
-	}
-
-	private static int minDist(int[] distance, boolean[] visited) {
-		assert (distance.length == visited.length);
-		int res = -1;
-		int min = Integer.MAX_VALUE;
-		for (int i = 0; i < distance.length; i++) {
-			if (visited[i]) continue;
-			if (min > distance[i]) {
-				min = distance[i];
-				res = i;
-			}
-		}
 		return res;
 	}
 
