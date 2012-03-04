@@ -6,6 +6,7 @@ TASK: msquare
 import java.io.*;
 import java.util.*;
 
+
 public class msquare {
 
 	private final static int[][] OP = new int[][] {
@@ -16,11 +17,11 @@ public class msquare {
 			// C: 1, 2, 3, 4, 5, 6, 7, 8 => 1, 7, 2, 4, 5, 3, 6, 8
 			new int[] { 1, 7, 2, 4, 5, 3, 6, 8 } };
 
-	private final static int INIT = 12345678;
+	private final static short[] INIT = new short[] {1, 2, 3, 4, 5, 6, 7, 8};
 
 	public class SqState implements Comparable<SqState> {
 
-		private int state;
+		private short[] state;
 		private long opSeq;
 
 		public SqState() {
@@ -32,6 +33,10 @@ public class msquare {
 			this.opSeq = s.opSeq;
 		}
 
+		public SqState(short[] state) {
+			this.setState(state);
+		}
+
 		public String getOpSeq() {
 			StringBuilder sb = new StringBuilder();
 			while (opSeq > 0) {
@@ -40,66 +45,87 @@ public class msquare {
 			}
 			return sb.toString();
 		}
+		
+		public boolean equals(Object obj) {
+			if (!(obj instanceof SqState)) return false;
+			SqState other = (SqState)obj;
+			for (int i = 0; i < 8; i++) {
+				if (state[i] != other.state[i]) return false;
+			}
+			return true;
+		}
 
 		public int compareTo(SqState other) {
 			if (opSeq == other.opSeq) return 0;
 			return opSeq > other.opSeq ? 1 : -1;
 		}
 
-
-		public void setState(int state) {
-			this.state = state;
+		public void setState(short[] state) {
+			this.state = Arrays.copyOf(state, 8);
 		}
 
-		public int getState() {
+		public short[] getState() {
 			return state;
+		}
+		
+		public int hashCode() {
+			int res = 0;
+			for (int i = 0; i < 8; i++) {
+				res = res * 10 + state[i];
+			}
+			return res;
 		}
 
 	}
 
 	final static private int[] POW = new int[] { 1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000 };
 
-	private HashSet<Integer> seen = new HashSet<Integer>();
+	
 
-	public String solve(int goal) {
-		// it's unfair c++ can pass but Java can't, 
+	private static final ArrayList<HashMap<Integer, Integer>> cache = new ArrayList<HashMap<Integer, Integer>>();
+
+	public String solve(short[] goal) {
+		// it's unfair c++ can pass but Java can't,
 		// this code works correctly for the following cases
 		// See test cases 4 and 5
-//		if (goal == 34215678) return "ABCABBBCBBBCBCABCB"; 
-//		if (goal == 43125678) return "ABBBCABBBCBBBCBCABCBBB"; 
+		// if (goal == 34215678) return "ABCABBBCBBBCBCABCB";
+		// if (goal == 43125678) return "ABBBCABBBCBBBCBCABCBBB";
 
-		
+		SqState goalState = new SqState(goal);
 		PriorityQueue<SqState> queue = new PriorityQueue<msquare.SqState>();
 		queue.add(new SqState());
 
+		
 		SqState res = null;
+
+		HashSet<SqState> seen = new HashSet<msquare.SqState>();
+		seen.add(new SqState());
 
 		while (queue.size() > 0) {
 			SqState state = queue.remove();
-			seen.add(state.getState());
-			if (state.state == goal) {
+			if (state.equals(goalState)) {
 				res = state;
 				break;
 			}
 			for (int op = 0; op < 3; op++) {
 				SqState newState = new SqState(state);
 
-				int thisStateInt = state.getState();
+				short[] thisStateArray = state.getState();
 				long opSeq = state.opSeq;
-				
-				int newStateInt = 0;
-				for (int i = 0; i < 8; i++) {
-					int pos = 8 - OP[op][i];
-					int bit = (thisStateInt / POW[pos]) % 10;
-					newStateInt = (newStateInt * 10) + bit;
-				}
-				newState.setState(newStateInt);
+
+				short[] newStateArray = new short[8];
+					for (int i = 0; i < 8; i++) {
+						newStateArray[i] = thisStateArray[OP[op][i] - 1];
+					}
+
+				newState.setState(newStateArray);
 				opSeq = opSeq * 4 + (op + 1);
 				newState.opSeq = opSeq;
 
-				if (!seen.contains(newState.getState())) {
+				if (!seen.contains(newState)) {
+					seen.add(newState);
 					queue.add(newState);
-				} 
+				}
 			}
 		}
 		return res.getOpSeq();
@@ -110,11 +136,16 @@ public class msquare {
 		BufferedReader f = new BufferedReader(new FileReader(problemName + ".in"));
 		StringTokenizer st = new StringTokenizer(f.readLine());
 
-		int state = 0;
+		short[] state = new short[8];
 		for (int i = 0; i < 8; i++) {
-			state = state * 10 + Integer.parseInt(st.nextToken());
+			state[i] = Short.parseShort(st.nextToken());
 		}
+		
+		
 		String res = (new msquare()).solve(state);
+		
+		
+		
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(problemName + ".out")));
 		out.println(res.length());
 		if (res.length() == 0) {

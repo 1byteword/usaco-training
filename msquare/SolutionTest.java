@@ -1,4 +1,3 @@
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +13,7 @@ public class SolutionTest {
 
 	@Test
 	public void test0() {
-		int state = 12345678;
+		short[] state = new short[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 		String expected = "";
 		String actual = solution.solve(state);
 		Assert.assertEquals(expected, actual);
@@ -22,7 +21,7 @@ public class SolutionTest {
 
 	@Test
 	public void test1() {
-		int state = 26845731;
+		short[] state = new short[] { 2, 6, 8, 4, 5, 7, 3, 1};
 		String expected = "BCABCCB";
 		String actual = solution.solve(state);
 		Assert.assertEquals(expected, actual);
@@ -30,7 +29,7 @@ public class SolutionTest {
 
 	@Test
 	public void test2() {
-		int state = 61543278;
+		short[] state = new short[] { 6, 1, 5, 4, 3, 2, 7, 8};
 		String expected = "ABBBCABBBCBBBC";
 		String actual = solution.solve(state);
 		Assert.assertEquals(expected, actual);
@@ -38,7 +37,7 @@ public class SolutionTest {
 
 	@Test
 	public void test3() {
-		int state = 41235876;
+		short[] state = new short[] { 4, 1, 2, 3, 5, 8, 7, 6};
 		String expected = "CCBCBCBBCBCBCCB";
 		String actual = solution.solve(state);
 		Assert.assertEquals(expected, actual);
@@ -46,7 +45,7 @@ public class SolutionTest {
 
 	@Test
 	public void test4() {
-		int state = 34215678;
+		short[] state = new short[] {  3, 4, 2, 1, 5, 6, 7, 8};
 		String expected = "ABCABBBCBBBCBCABCB";
 		String actual = solution.solve(state);
 		Assert.assertEquals(expected, actual);
@@ -54,11 +53,10 @@ public class SolutionTest {
 
 	@Test
 	public void test5() {
-		int state = 43125678;
+		short[] state = new short[] {  4, 3, 1, 2, 5, 6, 7, 8};
 		String expected = "ABBBCABBBCBBBCBCABCBBB";
 		String actual = solution.solve(state);
 		Assert.assertEquals(expected, actual);
 	}
-
 
 }
