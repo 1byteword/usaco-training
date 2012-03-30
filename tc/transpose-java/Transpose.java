@@ -12,8 +12,6 @@ public class Transpose {
 			}
 		}
 
-		int ii = 0;
-
 		for (int i = 0; i < m * n; i++) {
 			ArrayList<Integer> sub = new ArrayList<Integer>();
 			sub.add(i);
