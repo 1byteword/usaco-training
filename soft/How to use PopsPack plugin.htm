@@ -1,0 +1,332 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 9">
+<meta name="Originator" content="Microsoft Word 9">
+<link rel="File-List" href="http://www.topcoder.com/contest/classes/ExampleBuilder/How%20to%20use%20PopsPack_files/filelist.xml">
+<title>How to use PopsPack plugin</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Tim Roberts</o:Author>
+  <o:LastAuthor>gpaul</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>665</o:TotalTime>
+  <o:Created>2004-01-20T21:01:00Z</o:Created>
+  <o:LastSaved>2004-01-20T21:01:00Z</o:LastSaved>
+  <o:Pages>9</o:Pages>
+  <o:Words>2030</o:Words>
+  <o:Characters>11572</o:Characters>
+  <o:Lines>96</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>14211</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+h4
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+h5
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:131287279;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1681312640 67698699 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0D8;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:498694168;
+	mso-list-type:hybrid;
+	mso-list-template-ids:219811454 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:622230898;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1072856018;}
+@list l2:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3
+	{mso-list-id:1139345427;
+	mso-list-type:simple;
+	mso-list-template-ids:67698705;}
+@list l3:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l4
+	{mso-list-id:1149522107;
+	mso-list-type:hybrid;
+	mso-list-template-ids:990386116 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5
+	{mso-list-id:1349213211;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-711182382 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l5:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l6
+	{mso-list-id:1662737069;
+	mso-list-type:simple;
+	mso-list-template-ids:67698705;}
+@list l6:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:1890726224;
+	mso-list-type:simple;
+	mso-list-template-ids:67698705;}
+@list l7:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l8
+	{mso-list-id:1921214300;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1004735544 67698705 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l8:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l9
+	{mso-list-id:1993637670;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1706455934 67698699 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0D8;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l10
+	{mso-list-id:2089766609;
+	mso-list-type:simple;
+	mso-list-template-ids:67698705;}
+@list l10:level1
+	{mso-level-text:"%1\)";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body style="tab-interval:.5in" lang="EN-US" link="blue" vlink="purple">
+
+<div class="Section1">
+
+<h1>How to use ExampleBuilder Plugin</h1>
+
+<p class="MsoNormal">ExampleBuilder is a CodeProcessor plug-in that, 
+given a ProblemComponentModel, produces code to test the examples in the
+ target language.</p>
+<br>
+<p class="MsoNormal">The plug-in expects a JVM version 1.4 or later.</p>
+<br>
+<p class="MsoNormal">The plug-in has been in use for nearly a year in 
+its current incarnation (its previous version that used a parser was in 
+use for about a year before then). I did most of my testing using C# 
+problems. I verified compatibility with Java and C++ on a handful of 
+examples, but no extensive testing has been done.</p>
+<br>
+<p class="MsoNormal">ExampleBuilder comes with code templates for Java, 
+C++, and C#. The plug-in defines a $MAINBODY$ variable used in the 
+templates. Code templates are important part of the plug-in Ð you must 
+configure your FileEdit with a version derived from one of the templates
+ supplied with the plug-in.</p>
+<br>
+<h2>Installing ExampleBuilder</h2>
+
+<p class="MsoNormal">To install ExampleBuilder, you need to install 
+CodeProcessor, and configure it with an editor of your choice. See 
+instructions below for configuring CodeProcessor to use ExampleBuilder 
+and FileEdit.</p>
+<ol>
+<li>Download the latest <a href="http://www.topcoder.com/contest/classes/CodeProcessor/CodeProcessor.jar">CodeProcessor.jar</a>, <a href="http://www.topcoder.com/contest/classes/FileEdit/FileEdit.jar">FileEdit.jar</a>, and <a href="http://www.topcoder.com/contest/classes/ExampleBuilder/ExampleBuilder.jar">ExampleBuilder.jar</a> from the TopCoder's web site</li>
+<li>Start the TopCoder Arena applet</li>
+<li>From the Options menu, choose Editor to open Editor Preferences</li>
+<li>In Editor Preferences, Click [Add]</li>
+<li>Enter Name = ExampleBuilder</li>
+<li>Enter EntryPoint = codeprocessor.EntryPoint</li>
+<li>Enter ClassPath = 
+&lt;download&gt;/CodeProcessor.jar;&lt;download&gt;/FileEdit.jar;&lt;download&gt;
+ ExampleBuilder.jar, where &lt;download&gt; represents an absolute path 
+to the directory to which you downloaded the jar files.</li>
+<li>In Editor Preferences, select ExampleBuilder, and click [Configure] to open CodeProcessor Configuration</li>
+<li>Enter Editor EntryPoint = fileedit.EntryPoint</li>
+<li>Enter ProcessorClass = tc_plugin.ExampleBuilder</li>
+<li>In CodeProcessor Configuration, click [Verify]. The applet should 
+detect that preprocess and getUserDefinedTags methods are present.</li>
+<li>In CodeProcessor Configuration, click [Configure] to access 
+FileEdit's configuration page. Make a code template that uses the 
+$MAINBODY$ tag to see the code that ExampleBuilder generates.</li>
+<li>Click [Save] and [Close] in all open dialogs</li>
+<li>Depending on your language preference, download <a href="http://www.topcoder.com/contest/classes/ExampleBuilder/CodeTemplate.java">CodeTemplate.java</a>, <a href="http://www.topcoder.com/contest/classes/ExampleBuilder/CodeTemplate.cpp">CodeTemplate.cpp</a>, or <a href="http://www.topcoder.com/contest/classes/ExampleBuilder/CodeTemplate.cs">CodeTemplate.cs</a>. Paste the text of the desired template in the FileEdit's configuration window.</li>
+<li>If you are running WebStart application, close it; if you are 
+running in a browser, close the instance of the browser that runs the 
+applet.</li>
+</ol>
+
+<br><br>
+
+<p class="MsoNormal">To verify the installation, go to a practice room and open a problem. Verify that examples are expanded in the output.</p>
+
+<h2>Troubleshooting the installation</h2>
+
+<p class="MsoNormal">The most common installation problem is a JVM 
+version mismatch. If you are running The Arena from the browser, go to 
+Java Plugin configuration in the Control Panel, and verify that your 
+default JRE is 1.4. If you are running The Arena in WebStart, go to 
+"File/Preferences, Java" in the WebStart application, and verify that 
+1.4 is the default JRE version.</p>
+<br><br>
+<p class="MsoNormal">Happy coding!<br>
+kyky</p>
+
+
+</div>
+
+
+
+
+</body></html>
