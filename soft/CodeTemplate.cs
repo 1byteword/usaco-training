@@ -5,6 +5,7 @@ using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections;
+using System.Collections.Generic;
 
 public class $CLASSNAME$ {
     public $RC$ $METHODNAME$($METHODPARMS$) {
